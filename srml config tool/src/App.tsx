@@ -1,35 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { FC, useState } from 'react';
+import * as enums from './customizableSlimes/enums';
+import * as defaults from './customizableSlimes/defaults';
+//import * as mods from './mods';
 
-function App() {
-  const [count, setCount] = useState(0)
+interface Props {
+  onChange: (value: string, configName: string) => void;
+}
 
+export const App: FC<Props> = ({ onChange }) => {
+
+  const [config, setConfig] = useState<typeof defaults.CustomSlime>({
+    ...defaults.CustomSlime,
+  });
+  
+
+  const handleChange = (configName: string) => (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const newValue = event.target.value;
+    setConfig((prevConfig) => ({
+      ...prevConfig,
+      [configName]: newValue,
+    }));
+    onChange(newValue, configName);
+  };
+
+  const renderConfigOptions = () => {
+    const configKeys = Object.keys(defaults);
+  
+    return configKeys.map((configKey) => {
+      const defaultValue = defaults[configKey as keyof typeof defaults];
+      
+      const renderConfigOption = (optionKey: string, optionValue: string | number | boolean) => {
+        let inputElement;
+  
+        switch (typeof optionValue) {
+          case 'string':
+            inputElement = (
+              <input type="text" value={config[configKey] as string} onChange={handleChange(`${configKey}.${optionKey}`)} />
+            );
+            break;
+          case 'number':
+            inputElement = (
+              <input type="number" value={config[configKey] as number} onChange={handleChange(`${configKey}.${optionKey}`)} />
+            );
+            break;
+          case 'boolean':
+            inputElement = (
+              <select value={config[configKey] as string} onChange={handleChange(`${configKey}.${optionKey}`)}>
+              <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+            );
+            break;
+            // case 'object':
+            //     inputElement = (
+            //       <select value={config[configKey] as string} onChange={handleChange(`${configKey}.${optionKey}`)}>
+            //         {Object.entries(enums[optionKey as keyof typeof enums]).map(([enumKey, enumValue]) => (
+            //           <option key={enumKey} value={enumValue}>
+            //             {enumKey}
+            //           </option>
+            //         ))}
+            //       </select>
+            //     );
+            //   break;
+          default:
+            inputElement = null;
+        }
+  
+        return (
+          <div key={optionKey}>
+            <label>{optionKey}</label>{' '}
+            {inputElement}
+          </div>
+        );
+      };
+  
+      return (
+        <div key={configKey}>
+          <h2>{configKey}</h2>
+          {Object.entries(defaultValue).map(([optionKey, optionValue]) => renderConfigOption(optionKey, optionValue))}
+        </div>
+      );
+    });
+  };
+  
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>SRML Config Tool</h1>
+      {renderConfigOptions()}
     </>
-  )
-}
+  );
+};
 
 export default App
