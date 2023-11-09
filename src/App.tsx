@@ -1,6 +1,5 @@
 import { FC, useState } from 'react';
-import * as enums from './customizableSlimes/enums';
-import * as defaults from './customizableSlimes/defaults';
+import * as defaults from './customizableSlimes/schema.json';
 //import * as mods from './mods';
 
 interface Props {
@@ -9,8 +8,8 @@ interface Props {
 
 export const App: FC<Props> = ({ onChange }) => {
 
-  const [config, setConfig] = useState<typeof defaults.CustomSlime>({
-    ...defaults.CustomSlime,
+  const [config, setConfig] = useState<typeof defaults.properties>({
+    ...defaults.properties,
   });
   
 
@@ -31,8 +30,10 @@ export const App: FC<Props> = ({ onChange }) => {
       
       const renderConfigOption = (optionKey: string, optionValue: string | number | boolean) => {
         let inputElement;
+
+        const type = Array.isArray(optionValue) ? 'array' : typeof optionValue;
   
-        switch (typeof optionValue) {
+        switch (type) {
           case 'string':
             inputElement = (
               <input type="text" value={config[configKey] as string} onChange={handleChange(`${configKey}.${optionKey}`)} />
@@ -51,7 +52,7 @@ export const App: FC<Props> = ({ onChange }) => {
               </select>
             );
             break;
-            // case 'object':
+            // case 'array':
             //     inputElement = (
             //       <select value={config[configKey] as string} onChange={handleChange(`${configKey}.${optionKey}`)}>
             //         {Object.entries(enums[optionKey as keyof typeof enums]).map(([enumKey, enumValue]) => (
