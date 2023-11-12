@@ -1,1470 +1,987 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "definitions": {
-      "Slimes": {
-        "type": "object",
-        "properties": {
-          "RAD_SLIME": {
-            "type": "integer",
-            "const": 1
-          },
-          "ROCK_SLIME": {
-            "type": "integer",
-            "const": 2
-          },
-          "PINK_SLIME": {
-            "type": "integer",
-            "const": 3
-          },
-          "GOLD_SLIME": {
-            "type": "integer",
-            "const": 4
-          },
-          "BOOM_SLIME": {
-            "type": "integer",
-            "const": 5
-          },
-          "PHOSPHOR_SLIME": {
-            "type": "integer",
-            "const": 6
-          },
-          "TABBY_SLIME": {
-            "type": "integer",
-            "const": 7
-          },
-          "HUNTER_SLIME": {
-            "type": "integer",
-            "const": 8
-          },
-          "HONEY_SLIME": {
-            "type": "integer",
-            "const": 9
-          },
-          "PUDDLE_SLIME": {
-            "type": "integer",
-            "const": 10
-          },
-          "CRYSTAL_SLIME": {
-            "type": "integer",
-            "const": 11
-          },
-          "QUANTUM_SLIME": {
-            "type": "integer",
-            "const": 12
-          },
-          "DERVISH_SLIME": {
-            "type": "integer",
-            "const": 13
-          },
-          "MOSAIC_SLIME": {
-            "type": "integer",
-            "const": 14
-          },
-          "TANGLE_SLIME": {
-            "type": "integer",
-            "const": 15
-          },
-          "FIRE_SLIME": {
-            "type": "integer",
-            "const": 16
-          },
-          "SABER_SLIME": {
-            "type": "integer",
-            "const": 17
-          },
-          "QUICKSILVER_SLIME": {
-            "type": "integer",
-            "const": 18
-          },
-          "CUSTOMIZABLE_SLIME": {
-            "type": "integer",
-            "const": 19
-          }
-        }
-      },
-      "Plorts": {
-          "type": "object",
-          "properties": {
-              "RAD_PLORT": {
-                  "type": "integer",
-                  "const": 1
-              },
-              "ROCK_PLORT": {
-                  "type": "integer",
-                  "const": 2
-              },
-              "PINK_PLORT": {
-                  "type": "integer",
-                  "const": 3
-              },
-              "GOLD_PLORT": {
-                  "type": "integer",
-                  "const": 4
-              },
-              "BOOM_PLORT": {
-                  "type": "integer",
-                  "const": 5
-              },
-              "PHOSPHOR_PLORT": {
-                  "type": "integer",
-                  "const": 6
-              },
-              "TABBY_PLORT": {
-                  "type": "integer",
-                  "const": 7
-              },
-              "HUNTER_PLORT": {
-                  "type": "integer",
-                  "const": 8
-              },
-              "HONEY_PLORT": {
-                  "type": "integer",
-                  "const": 9
-              },
-              "PUDDLE_PLORT": {
-                  "type": "integer",
-                  "const": 10
-              },
-              "CRYSTAL_PLORT": {
-                  "type": "integer",
-                  "const": 11
-              },
-              "QUANTUM_PLORT": {
-                  "type": "integer",
-                  "const": 12
-              },
-              "DERVISH_PLORT": {
-                  "type": "integer",
-                  "const": 13
-              },
-              "MOSAIC_PLORT": {
-                  "type": "integer",
-                  "const": 14
-              },
-              "TANGLE_PLORT": {
-                  "type": "integer",
-                  "const": 15
-              },
-              "FIRE_PLORT": {
-                  "type": "integer",
-                  "const": 16
-              },
-              "SABER_PLORT": {
-                  "type": "integer",
-                  "const": 17
-              },
-              "QUICKSILVER_PLORT": {
-                  "type": "integer",
-                  "const": 18
-              },
-              "CUSTOMIZABLE_PLORT": {
-                  "type": "integer",
-                  "const": 19
-              }
-          }
-  
-      },
-      "Foods": {
-        "type": "object",
-        "properties": {
-          "CUBERRY_FRUIT": {
-            "type": "integer",
-            "const": 1
-          },
-          "MANGO_FRUIT": {
-            "type": "integer",
-            "const": 2
-          },
-          "HEN": {
-            "type": "integer",
-            "const": 3
-          },
-          "ROOSTER": {
-            "type": "integer",
-            "const": 4
-          },
-          "CARROT_VEGGIE": {
-            "type": "integer",
-            "const": 5
-          },
-          "OCAOCA_VEGGIE": {
-            "type": "integer",
-            "const": 6
-          },
-          "PEAR_FRUIT": {
-            "type": "integer",
-            "const": 7
-          },
-          "POGO_FRUIT": {
-            "type": "integer",
-            "const": 8
-          },
-          "PARSNIP_VEGGIE": {
-            "type": "integer",
-            "const": 9
-          },
-          "BEET_VEGGIE": {
-            "type": "integer",
-            "const": 10
-          },
-          "ELDER_HEN": {
-            "type": "integer",
-            "const": 11
-          },
-          "ELDER_ROOSTER": {
-            "type": "integer",
-            "const": 12
-          },
-          "STONY_HEN": {
-            "type": "integer",
-            "const": 13
-          },
-          "BRIAR_HEN": {
-            "type": "integer",
-            "const": 14
-          },
-          "ONION_VEGGIE": {
-            "type": "integer",
-            "const": 15
-          },
-          "LEMON_FRUIT": {
-            "type": "integer",
-            "const": 16
-          },
-          "PAINTED_HEN": {
-            "type": "integer",
-            "const": 17
-          },
-          "GINGER_VEGGIE": {
-            "type": "integer",
-            "const": 18
-          },
-          "SPICY_TOFU": {
-            "type": "integer",
-            "const": 19
-          },
-          "KOOKADOBA_FRUIT": {
-            "type": "integer",
-            "const": 20
-          }
-        }
-      },
-      "FoodGroups": {
-        "type": "object",
-        "properties": {
-          "VEGGIES": {
-            "type": "integer",
-            "const": 1
-          },
-          "FRUIT": {
-            "type": "integer",
-            "const": 2
-          },
-          "MEAT": {
-            "type": "integer",
-            "const": 3
-          },
-          "GINGER": {
-            "type": "integer",
-            "const": 4
-          },
-          "PLORTS": {
-            "type": "integer",
-            "const": 5
-          },
-          "NONTARRGOLD_SLIMES": {
-            "type": "integer",
-            "const": 6
-          }
-        }
-      },
-      "Crafts": {
-        "type": "object",
-        "properties": {
-          "PRIMORDY_OIL_CRAFT": {
-            "type": "integer",
-            "const": 1
-          },
-          "DEEP_BRINE_CRAFT": {
-            "type": "integer",
-            "const": 2
-          },
-          "SPIRAL_STEAM_CRAFT": {
-            "type": "integer",
-            "const": 3
-          },
-          "LAVA_DUST_CRAFT": {
-            "type": "integer",
-            "const": 4
-          },
-          "BUZZ_WAX_CRAFT": {
-            "type": "integer",
-            "const": 5
-          },
-          "WILD_HONEY_CRAFT": {
-            "type": "integer",
-            "const": 6
-          },
-          "HEXACOMB_CRAFT": {
-            "type": "integer",
-            "const": 7
-          },
-          "ROYAL_JELLY_CRAFT": {
-            "type": "integer",
-            "const": 8
-          },
-          "JELLYSTONE_CRAFT": {
-            "type": "integer",
-            "const": 9
-          },
-          "INDIGONIUM_CRAFT": {
-            "type": "integer",
-            "const": 10
-          },
-          "SLIME_FOSSIL_CRAFT": {
-            "type": "integer",
-            "const": 11
-          },
-          "STRANGE_DIAMOND_CRAFT": {
-            "type": "integer",
-            "const": 12
-          },
-          "SILKY_SAND_CRAFT": {
-            "type": "integer",
-            "const": 13
-          },
-          "PEPPER_JAM_CRAFT": {
-            "type": "integer",
-            "const": 14
-          },
-          "GLASS_SHARD_CRAFT": {
-            "type": "integer",
-            "const": 15
-          },
-          "MANIFOLD_CUBE_CRAFT": {
-            "type": "integer",
-            "const": 16
-          }
-        }
-      },
-      "Toys": {
-        "type": "object",
-        "properties": {
-          "KOOKADOBA_BALL": {
-            "type": "integer",
-            "const": 1
-          },
-          "BEACH_BALL_TOY": {
-            "type": "integer",
-            "const": 2
-          },
-          "BIG_ROCK_TOY": {
-            "type": "integer",
-            "const": 3
-          },
-          "YARN_BALL_TOY": {
-            "type": "integer",
-            "const": 4
-          },
-          "NIGHT_LIGHT_TOY": {
-            "type": "integer",
-            "const": 5
-          },
-          "POWER_CELL_TOY": {
-            "type": "integer",
-            "const": 6
-          },
-          "BOMB_BALL_TOY": {
-            "type": "integer",
-            "const": 7
-          },
-          "BUZZY_BEE_TOY": {
-            "type": "integer",
-            "const": 8
-          },
-          "RUBBER_DUCKY_TOY": {
-            "type": "integer",
-            "const": 9
-          },
-          "CRYSTAL_BALL_TOY": {
-            "type": "integer",
-            "const": 10
-          },
-          "STUFFED_CHICKEN_TOY": {
-            "type": "integer",
-            "const": 11
-          },
-          "PUZZLE_CUBE_TOY": {
-            "type": "integer",
-            "const": 12
-          },
-          "DISCO_BALL_TOY": {
-            "type": "integer",
-            "const": 13
-          },
-          "GYRO_TOP_TOY": {
-            "type": "integer",
-            "const": 14
-          },
-          "SOL_MATE_TOY": {
-            "type": "integer",
-            "const": 15
-          },
-          "CHARCOAL_BRICK_TOY": {
-            "type": "integer",
-            "const": 16
-          },
-          "STEGO_BUDDY_TOY": {
-            "type": "integer",
-            "const": 17
-          },
-          "TREASURE_CHEST_TOY": {
-            "type": "integer",
-            "const": 18
-          },
-          "BOP_GOBLIN_TOY": {
-            "type": "integer",
-            "const": 19
-          },
-          "ROBOT_TOY": {
-            "type": "integer",
-            "const": 20
-          },
-          "OCTO_BUDDY_TOY": {
-            "type": "integer",
-            "const": 21
-          }
-        }
-      },
-      "Crates": {
-        "type": "object",
-        "properties": {
-          "CRATE_DESERT_01": {
-            "type": "integer",
-            "const": 1
-          },
-          "CRATE_MOSS_01": {
-            "type": "integer",
-            "const": 2
-          },
-          "CRATE_QUARRY_01": {
-            "type": "integer",
-            "const": 3
-          },
-          "CRATE_REEF_01": {
-            "type": "integer",
-            "const": 4
-          },
-          "CRATE_RUINS_01": {
-            "type": "integer",
-            "const": 5
-          },
-          "CRATE_WILDS_01": {
-            "type": "integer",
-            "const": 6
-          }
-        }
-      },
-      "Emotions": {
-        "type": "object",
-        "properties": {
-          "NONE": {
-            "type": "integer",
-            "const": 1
-          },
-          "HUNGER": {
-            "type": "integer",
-            "const": 2
-          },
-          "AGITATION": {
-            "type": "integer",
-            "const": 3
-          },
-          "FEAR": {
-            "type": "integer",
-            "const": 4
-          }
-        }
-      },
-      "Zones": {
-        "type": "object",
-        "properties": {
-          "NONE": {
-            "type": "integer",
-            "const": 1
-          },
-          "RANCH": {
-            "type": "integer",
-            "const": 2
-          },
-          "REEF": {
-            "type": "integer",
-            "const": 3
-          },
-          "QUARRY": {
-            "type": "integer",
-            "const": 4
-          },
-          "MOSS": {
-            "type": "integer",
-            "const": 5
-          },
-          "DESERT": {
-            "type": "integer",
-            "const": 6
-          },
-          "SEA": {
-            "type": "integer",
-            "const": 7
-          },
-          "RUINS": {
-            "type": "integer",
-            "const": 8
-          },
-          "RUINS_TRANSITION": {
-            "type": "integer",
-            "const": 9
-          },
-          "WILDS": {
-            "type": "integer",
-            "const": 10
-          },
-          "OGDEN_RANCH": {
-            "type": "integer",
-            "const": 11
-          },
-          "VALLEY": {
-            "type": "integer",
-            "const": 12
-          },
-          "MOCHI_RANCH": {
-            "type": "integer",
-            "const": 13
-          },
-          "SLIMULATIONS": {
-            "type": "integer",
-            "const": 14
-          },
-          "VIKTOR_LAB": {
-            "type": "integer",
-            "const": 15
-          }
-        }
-      },
-      "LargoProps": {
-        "type": "object",
-        "properties": {
-          "NONE": {
-            "type": "integer",
-            "const": 1
-          },
-          "SWAP_EYES": {
-            "type": "integer",
-            "const": 2
-          },
-          "SWAP_MOUTH": {
-            "type": "integer",
-            "const": 3
-          },
-          "SWAP_BASE": {
-            "type": "integer",
-            "const": 4
-          },
-          "SWAP_SOUNDS": {
-            "type": "integer",
-            "const": 5
-          },
-          "REPLACE_BASE_MAT_AS_SLIME1": {
-            "type": "integer",
-            "const": 6
-          },
-          "REPLACE_BASE_MAT_AS_SLIME2": {
-            "type": "integer",
-            "const": 7
-          },
-          "RECOLOR_SLIME1_ADDON_MATS": {
-            "type": "integer",
-            "const": 8
-          },
-          "RECOLOR_SLIME2_ADDON_MATS": {
-            "type": "integer",
-            "const": 9
-          },
-          "REPLACE_SLIME1_ADDON_MATS": {
-            "type": "integer",
-            "const": 10
-          },
-          "REPLACE_SLIME2_ADDON_MATS": {
-            "type": "integer",
-            "const": 11
-          },
-          "RECOLOR_BASE_MAT_AS_SLIME1": {
-            "type": "integer",
-            "const": 12
-          },
-          "RECOLOR_BASE_MAT_AS_SLIME2": {
-            "type": "integer",
-            "const": 13
-          },
-          "PREVENT_SLIME1_EATMAP_TRANSFORM": {
-            "type": "integer",
-            "const": 14
-          },
-          "PREVENT_SLIME2_EATMAP_TRANSFORM": {
-            "type": "integer",
-            "const": 15
-          },
-          "GENERATE_NAME": {
-            "type": "integer",
-            "const": 16
-          },
-          "GENERATE_SECRET_STYLES": {
-            "type": "integer",
-            "const": 17
-          },
-          "INHERIT_STRIPE_FROM_SLIME1": {
-            "type": "integer",
-            "const": 18
-          },
-          "INHERIT_STRIPE_FROM_SLIME2": {
-            "type": "integer",
-            "const": 19
-          }
-        }
-      },
-      "Other": {
-        "type": "object",
-        "properties": {
-          "WATER_LIQUID": {
-            "type": "integer",
-            "const": 1
-          },
-          "MAGIC_WATER_LIQUID": {
-            "type": "integer",
-            "const": 2
-          },
-          "GLITCH_DEBUG_SPRAY_LIQUID": {
-            "type": "integer",
-            "const": 3
-          },
-          "NORMAL": {
-            "type": "integer",
-            "const": 4
-          },
-          "LARGE": {
-            "type": "integer",
-            "const": 5
-          },
-          "GIANT": {
-            "type": "integer",
-            "const": 6
-          }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "Slimes": {
+      "enum": [
+        "RAD_SLIME",
+        "ROCK_SLIME",
+        "PINK_SLIME",
+        "GOLD_SLIME",
+        "BOOM_SLIME",
+        "PHOSPHOR_SLIME",
+        "TABBY_SLIME",
+        "HUNTER_SLIME",
+        "HONEY_SLIME",
+        "PUDDLE_SLIME",
+        "CRYSTAL_SLIME",
+        "QUANTUM_SLIME",
+        "DERVISH_SLIME",
+        "MOSAIC_SLIME",
+        "TANGLE_SLIME",
+        "FIRE_SLIME",
+        "SABER_SLIME",
+        "QUICKSILVER_SLIME",
+        "CUSTOMIZABLE_SLIME"
+      ]
+    },
+    "Plorts": {
+      "enum": [
+        "RAD_PLORT",
+        "ROCK_PLORT",
+        "PINK_PLORT",
+        "GOLD_PLORT",
+        "BOOM_PLORT",
+        "PHOSPHOR_PLORT",
+        "TABBY_PLORT",
+        "HUNTER_PLORT",
+        "HONEY_PLORT",
+        "PUDDLE_PLORT",
+        "CRYSTAL_PLORT",
+        "QUANTUM_PLORT",
+        "DERVISH_PLORT",
+        "MOSAIC_PLORT",
+        "TANGLE_PLORT",
+        "FIRE_PLORT",
+        "SABER_PLORT",
+        "QUICKSILVER_PLORT",
+        "CUSTOMIZABLE_PLORT"
+      ]
+    },
+    "Foods": {
+      "enum": [
+        "CUBERRY_FRUIT",
+        "MANGO_FRUIT",
+        "HEN",
+        "ROOSTER",
+        "CARROT_VEGGIE",
+        "OCAOCA_VEGGIE",
+        "PEAR_FRUIT",
+        "POGO_FRUIT",
+        "PARSNIP_VEGGIE",
+        "BEET_VEGGIE",
+        "ELDER_HEN",
+        "ELDER_ROOSTER",
+        "STONY_HEN",
+        "BRIAR_HEN",
+        "ONION_VEGGIE",
+        "LEMON_FRUIT",
+        "PAINTED_HEN",
+        "GINGER_VEGGIE",
+        "SPICY_TOFU",
+        "KOOKADOBA_FRUIT"
+      ]
+    },
+    "FoodGroups": {
+      "enum": ["VEGGIES", "FRUIT", "MEAT", "GINGER", "PLORTS", "NONTARRGOLD_SLIMES"]
+    },
+    "Crafts": {
+      "enum": [
+        "PRIMORDY_OIL_CRAFT",
+        "DEEP_BRINE_CRAFT",
+        "SPIRAL_STEAM_CRAFT",
+        "LAVA_DUST_CRAFT",
+        "BUZZ_WAX_CRAFT",
+        "WILD_HONEY_CRAFT",
+        "HEXACOMB_CRAFT",
+        "ROYAL_JELLY_CRAFT",
+        "JELLYSTONE_CRAFT",
+        "INDIGONIUM_CRAFT",
+        "SLIME_FOSSIL_CRAFT",
+        "STRANGE_DIAMOND_CRAFT",
+        "SILKY_SAND_CRAFT",
+        "PEPPER_JAM_CRAFT",
+        "GLASS_SHARD_CRAFT",
+        "MANIFOLD_CUBE_CRAFT"
+      ]
+    },
+    "Toys": {
+      "enum": [
+        "KOOKADOBA_BALL",
+        "BEACH_BALL_TOY",
+        "BIG_ROCK_TOY",
+        "YARN_BALL_TOY",
+        "NIGHT_LIGHT_TOY",
+        "POWER_CELL_TOY",
+        "BOMB_BALL_TOY",
+        "BUZZY_BEE_TOY",
+        "RUBBER_DUCKY_TOY",
+        "CRYSTAL_BALL_TOY",
+        "STUFFED_CHICKEN_TOY",
+        "PUZZLE_CUBE_TOY",
+        "DISCO_BALL_TOY",
+        "GYRO_TOP_TOY",
+        "SOL_MATE_TOY",
+        "CHARCOAL_BRICK_TOY",
+        "STEGO_BUDDY_TOY",
+        "TREASURE_CHEST_TOY",
+        "BOP_GOBLIN_TOY",
+        "ROBOT_TOY",
+        "OCTO_BUDDY_TOY"
+      ]
+    },
+    "Crates": {
+      "enum": [
+        "CRATE_DESERT_01",
+        "CRATE_MOSS_01",
+        "CRATE_QUARRY_01",
+        "CRATE_REEF_01",
+        "CRATE_RUINS_01",
+        "CRATE_WILDS_01"
+      ]
+    },
+    "Emotions": {
+      "enum": ["NONE", "HUNGER", "AGITATION", "FEAR"]
+    },
+    "Zones": {
+      "enum": [
+        "NONE",
+        "RANCH",
+        "REEF",
+        "QUARRY",
+        "MOSS",
+        "DESERT",
+        "SEA",
+        "RUINS",
+        "RUINS_TRANSITION",
+        "WILDS",
+        "OGDEN_RANCH",
+        "VALLEY",
+        "MOCHI_RANCH",
+        "SLIMULATIONS",
+        "VIKTOR_LAB"
+      ]
+    },
+    "LargoProps": {
+      "enum": [
+        "NONE",
+        "SWAP_EYES",
+        "SWAP_MOUTH",
+        "SWAP_BASE",
+        "SWAP_SOUNDS",
+        "REPLACE_BASE_MAT_AS_SLIME1",
+        "REPLACE_BASE_MAT_AS_SLIME2",
+        "RECOLOR_SLIME1_ADDON_MATS",
+        "RECOLOR_SLIME2_ADDON_MATS",
+        "REPLACE_SLIME1_ADDON_MATS",
+        "REPLACE_SLIME2_ADDON_MATS",
+        "RECOLOR_BASE_MAT_AS_SLIME1",
+        "RECOLOR_BASE_MAT_AS_SLIME2",
+        "PREVENT_SLIME1_EATMAP_TRANSFORM",
+        "PREVENT_SLIME2_EATMAP_TRANSFORM",
+        "GENERATE_NAME",
+        "GENERATE_SECRET_STYLES",
+        "INHERIT_STRIPE_FROM_SLIME1",
+        "INHERIT_STRIPE_FROM_SLIME2"
+      ]
+    },
+    "Other": {
+      "enum": ["WATER_LIQUID", "MAGIC_WATER_LIQUID", "GLITCH_DEBUG_SPRAY_LIQUID", "NORMAL", "LARGE", "GIANT"]
+    }
+  },
+  "properties": {
+    "CustomSlime": {
+      "type": "object",
+      "properties": {
+        "SLIME_NAME": {
+          "type": "string",
+          "default": "Customizable Slime"
+        },
+        "TARR_SUPPORT": {
+          "type": "boolean",
+          "default": true
+        },
+        "CAN_LARGOFY": {
+          "type": "boolean",
+          "default": false
+        },
+        "WHAT_SLIME_LOOKS_LIKE": {
+          "$ref": "#/definitions/Slimes",
+          "enum": [{"$ref": "#/definitions/Slimes"}],
+          "default": "PINK_SLIME"
+        },
+        "WHAT_SLIME_ACTS_LIKE": {
+          "$ref": "#/definitions/Slimes",
+          "default": "PINK_SLIME"
+        },
+        "WHAT_SLIME_MATERIAL": {
+          "$ref": "#/definitions/Slimes",
+          "default": "PINK_SLIME"
+        },
+        "WHAT_SLIME_PRODUCES": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "$ref": "#/definitions/Slimes" },
+              { "$ref": "#/definitions/Foods" },
+              { "$ref": "#/definitions/Plorts" }
+            ]
+          },
+          "default": ["PINK_SLIME"]
+        },
+        "WHAT_SLIME_EATS": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FoodGroups"
+          },
+          "default": ["VEGGIES"]
+        },
+        "ADDITIONAL_FOOD_SLIME_EATS": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Foods"
+          },
+          "default": ["CARROT_VEGGIE"]
+        },
+        "FAVORITE_SLIME_EATS": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Foods"
+          },
+          "default": ["HEART_BEET"]
+        },
+        "FAVORITE_SLIME_TOY": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Toys"
+          },
+          "default": ["KOOKADOBA_BALL"]
+        },
+        "VACPACK_SIZE": {
+          "oneOf": [{ "$ref": "#/definitions/Other" }, { "enum": ["NORMAL", "LARGE", "GIANT"] }],
+          "default": "NORMAL"
+        },
+        "SLIMEPEDIA_TITLE": {
+          "type": "string",
+          "default": "Customizable Slime"
+        },
+        "SLIMEPEDIA_INTRO": {
+          "type": "string",
+          "default": "This slime can be customized via configuration files!"
+        },
+        "SLIMEPEDIA_DIET": {
+          "type": "string",
+          "default": "Veggies"
+        },
+        "SLIMEPEDIA_FAVORITE": {
+          "type": "string",
+          "default": "Heart Beet"
+        },
+        "SLIMEPEDIA_SLIMEOLOGY": {
+          "type": "string",
+          "default": "[Insert Long Description Here] and that's what the Customizable Slime can do!"
+        },
+        "SLIMEPEDIA_RISKS": {
+          "type": "string",
+          "default": "Don't break your slime! Be a little bit careful when you configure it."
+        },
+        "SLIMEPEDIA_PLORTONOMICS": {
+          "type": "string",
+          "default": "Customizable Plorts are worth a lot of money!"
+        },
+        "SLIME_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "SLIME_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "SLIME_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "SLIME_SPEC_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "SLIME_VAC_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "MOUTH_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "MOUTH_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "MOUTH_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "EYES_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "EYES_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "EYES_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "SPLAT_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "SPLAT_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "SPLAT_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
         }
       }
     },
-    "properties": {
-      "CustomSlime": {
-        "type": "object",
-        "properties": {
-          "SLIME_NAME": {
-            "type": "string",
-            "default": "Customizable Slime"
-          },
-          "TARR_SUPPORT": {
-            "type": "boolean",
-            "default": true
-          },
-          "CAN_LARGOFY": {
-            "type": "boolean",
-            "default": false
-          },
-          "WHAT_SLIME_LOOKS_LIKE": {
-            "$ref": "#/definitions/Slimes",
-            "default": 3
-          },
-          "WHAT_SLIME_ACTS_LIKE": {
-            "$ref": "#/definitions/Slimes",
-            "default": 3
-          },
-          "WHAT_SLIME_MATERIAL": {
-            "$ref": "#/definitions/Slimes",
-            "default": 3
-          },
-          "WHAT_SLIME_PRODUCES": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                { "$ref": "#/definitions/Slimes" },
-                { "$ref": "#/definitions/Foods" },
-                { "$ref": "#/definitions/Plorts" }
-              ]
-            },
-            "default": [3]
-          },
-          "WHAT_SLIME_EATS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/FoodGroups"
-            },
-            "default": [1]
-          },
-          "ADDITIONAL_FOOD_SLIME_EATS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/Foods"
-            },
-            "default": [3]
-          },
-          "FAVORITE_SLIME_EATS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/Foods"
-            },
-            "default": [10]
-          },
-          "FAVORITE_SLIME_TOY": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/Toys"
-            },
-            "default": [2]
-          },
-          "VACPACK_SIZE": {
-            "oneOf": [{ "$ref": "#/definitions/Other" }, { "enum": ["NORMAL", "LARGE", "GIANT"] }],
-            "default": "NORMAL"
-          },
-          "SLIMEPEDIA_TITLE": {
-            "type": "string",
-            "default": "Customizable Slime"
-          },
-          "SLIMEPEDIA_INTRO": {
-            "type": "string",
-            "default": "This slime can be customized via configuration files!"
-          },
-          "SLIMEPEDIA_DIET": {
-            "type": "string",
-            "default": "Veggies"
-          },
-          "SLIMEPEDIA_FAVORITE": {
-            "type": "string",
-            "default": "Heart Beet"
-          },
-          "SLIMEPEDIA_SLIMEOLOGY": {
-            "type": "string",
-            "default": "[Insert Long Description Here] and that's what the Customizable Slime can do!"
-          },
-          "SLIMEPEDIA_RISKS": {
-            "type": "string",
-            "default": "Don't break your slime! Be a little bit careful when you configure it."
-          },
-          "SLIMEPEDIA_PLORTONOMICS": {
-            "type": "string",
-            "default": "Customizable Plorts are worth a lot of money!"
-          },
-          "SLIME_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "SLIME_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "SLIME_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "SLIME_SPEC_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "SLIME_VAC_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "MOUTH_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "MOUTH_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "MOUTH_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "EYES_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "EYES_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "EYES_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "SPLAT_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "SPLAT_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "SPLAT_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          }
+    "AdditionalConfig": {
+      "type": "object",
+      "properties": {
+        "DISABLE_SPAWNING": {
+          "type": "boolean",
+          "default": false
+        },
+        "RANDOM_SLIME_COLORS": {
+          "type": "boolean",
+          "default": false
+        },
+        "RANDOM_PLORT_COLORS": {
+          "type": "boolean",
+          "default": false
+        },
+        "REMOVE_PHOSPHOR_WINGS": {
+          "type": "boolean",
+          "default": false
+        },
+        "REMOVE_PHOSPHOR_ANTENNAS": {
+          "type": "boolean",
+          "default": false
+        },
+        "REMOVE_STYLED_PHOSPHOR_WINGS": {
+          "type": "boolean",
+          "default": false
+        },
+        "REMOVE_STYLED_PHOSPHOR_ANTENNAS": {
+          "type": "boolean",
+          "default": false
         }
-      },
-      "AdditionalConfig": {
-        "type": "object",
-        "properties": {
-          "DISABLE_SPAWNING": {
-            "type": "boolean",
-            "default": false
-          },
-          "RANDOM_SLIME_COLORS": {
-            "type": "boolean",
-            "default": false
-          },
-          "RANDOM_PLORT_COLORS": {
-            "type": "boolean",
-            "default": false
-          },
-          "REMOVE_PHOSPHOR_WINGS": {
-            "type": "boolean",
-            "default": false
-          },
-          "REMOVE_PHOSPHOR_ANTENNAS": {
-            "type": "boolean",
-            "default": false
-          },
-          "REMOVE_STYLED_PHOSPHOR_WINGS": {
-            "type": "boolean",
-            "default": false
-          },
-          "REMOVE_STYLED_PHOSPHOR_ANTENNAS": {
-            "type": "boolean",
-            "default": false
-          }
+      }
+    },
+    "AdvancedConfig": {
+      "type": "object",
+      "properties": {
+        "SLIME_LOCAL_SCALE": {
+          "type": "number",
+          "default": 1
+        },
+        "SLIME_SPEED_FACTOR": {
+          "type": "number",
+          "default": 1
+        },
+        "SLIME_VERTICAL_FACTOR": {
+          "type": "number",
+          "default": 1
+        },
+        "PLORT_LOCAL_SCALE": {
+          "type": "number",
+          "default": 1
+        },
+        "ATTACK_PLAYER_DAMAGE": {
+          "type": "number",
+          "default": 20
+        },
+        "DAMAGE_ON_TOUCH_DAMAGE": {
+          "type": "number",
+          "default": 10
+        },
+        "DAMAGE_ON_TOUCH_REPEAT": {
+          "type": "number",
+          "default": 1
+        },
+        "GOTO_PLAYER_MIN_RADIUS": {
+          "type": "number",
+          "default": 5
+        },
+        "GOTO_PLAYER_MAX_RADIUS": {
+          "type": "number",
+          "default": 20
+        },
+        "GOTO_PLAYER_ATTEMPT": {
+          "type": "number",
+          "default": 10
+        },
+        "GOTO_PLAYER_GIVEUP": {
+          "type": "number",
+          "default": 10
+        },
+        "GOTO_PLAYER_MIN_DRIVE": {
+          "type": "number",
+          "default": 1
+        },
+        "TARR_GRAB_CAUSE_FEAR": {
+          "type": "boolean",
+          "default": true
+        },
+        "TARR_GRAB_COOLDOWN": {
+          "type": "number",
+          "default": 2
+        },
+        "TARR_GRAB_MIN_RADIUS": {
+          "type": "number",
+          "default": 5
+        },
+        "TARR_GRAB_MAX_RADIUS": {
+          "type": "number",
+          "default": 30
+        },
+        "FLEE_THREATS_DRIVER": {
+          "$ref": "#/definitions/Emotions",
+          "default": "FEAR"
+        },
+        "FLEE_THREATS_MAX_JUMP": {
+          "type": "number",
+          "default": 2
+        },
+        "AGITATED_KILL_IGNORE": {
+          "$ref": "#/definitions/Emotions",
+          "default": 1
+        },
+        "AGITATED_KILL_DELAY": {
+          "type": "number",
+          "default": 60
+        },
+        "SLIME_RUN_COMMAND_DELAY": {
+          "type": "number",
+          "default": 30
+        },
+        "SLIME_RUN_COMMAND_DRIVER": {
+          "$ref": "#/definitions/Emotions",
+          "default": "AGITATION"
+        },
+        "SLIME_RUN_COMMAND_DRIVER_AMOUNT": {
+          "type": "number",
+          "default": 0.5
+        },
+        "SLIME_RUN_COMMAND_TRIGGER": {
+          "type": "string",
+          "default": "spawn PINK_SLIME"
         }
-      },
-      "AdvancedConfig": {
-        "type": "object",
-        "properties": {
-          "SLIME_LOCAL_SCALE": {
-            "type": "number",
-            "default": 1
-          },
-          "SLIME_SPEED_FACTOR": {
-            "type": "number",
-            "default": 1
-          },
-          "SLIME_VERTICAL_FACTOR": {
-            "type": "number",
-            "default": 1
-          },
-          "PLORT_LOCAL_SCALE": {
-            "type": "number",
-            "default": 1
-          },
-          "ATTACK_PLAYER_DAMAGE": {
-            "type": "number",
-            "default": 20
-          },
-          "DAMAGE_ON_TOUCH_DAMAGE": {
-            "type": "number",
-            "default": 10
-          },
-          "DAMAGE_ON_TOUCH_REPEAT": {
-            "type": "number",
-            "default": 1
-          },
-          "GOTO_PLAYER_MIN_RADIUS": {
-            "type": "number",
-            "default": 5
-          },
-          "GOTO_PLAYER_MAX_RADIUS": {
-            "type": "number",
-            "default": 20
-          },
-          "GOTO_PLAYER_ATTEMPT": {
-            "type": "number",
-            "default": 10
-          },
-          "GOTO_PLAYER_GIVEUP": {
-            "type": "number",
-            "default": 10
-          },
-          "GOTO_PLAYER_MIN_DRIVE": {
-            "type": "number",
-            "default": 1
-          },
-          "TARR_GRAB_CAUSE_FEAR": {
-            "type": "boolean",
-            "default": true
-          },
-          "TARR_GRAB_COOLDOWN": {
-            "type": "number",
-            "default": 2
-          },
-          "TARR_GRAB_MIN_RADIUS": {
-            "type": "number",
-            "default": 5
-          },
-          "TARR_GRAB_MAX_RADIUS": {
-            "type": "number",
-            "default": 30
-          },
-          "FLEE_THREATS_DRIVER": {
-            "$ref": "#/definitions/Emotions",
-            "default": 4
-          },
-          "FLEE_THREATS_MAX_JUMP": {
-            "type": "number",
-            "default": 2
-          },
-          "AGITATED_KILL_IGNORE": {
-            "$ref": "#/definitions/Emotions",
-            "default": 1
-          },
-          "AGITATED_KILL_DELAY": {
-            "type": "number",
-            "default": 60
-          },
-          "SLIME_RUN_COMMAND_DELAY": {
-            "type": "number",
-            "default": 30
-          },
-          "SLIME_RUN_COMMAND_DRIVER": {
-            "$ref": "#/definitions/Emotions",
-            "default": 3
-          },
-          "SLIME_RUN_COMMAND_DRIVER_AMOUNT": {
-            "type": "number",
-            "default": 0.5
-          },
-          "SLIME_RUN_COMMAND_TRIGGER": {
-            "type": "string",
-            "default": "spawn PINK_SLIME"
-          }
+      }
+    },
+    "BehavioursConfig": {
+      "type": "object",
+      "properties": {
+        "HAS_DAMAGE_ON_TOUCH": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_SLIME_HOVER": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_PUDDLE_SLIME_SCOOT": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_BETTER_BREAK_ON_IMPACT": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_GOTO_PLAYER": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_ATTACK_PLAYER": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_FLEE_THREATS": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_METEOR_MAGNETISM": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_BOOM_EXPLOSION": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_CRYSTAL_SPIKES": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_DERVISH_TORNADO": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_MOSAIC_GLINT": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_TANGLE_VINES": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_TARR_GRAB": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_AGITATED_KILL": {
+          "type": "boolean",
+          "default": false
+        },
+        "HAS_SLIME_RUN_COMMAND": {
+          "type": "boolean",
+          "default": false
         }
-      },
-      "BehavioursConfig": {
-        "type": "object",
-        "properties": {
-          "HAS_DAMAGE_ON_TOUCH": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_SLIME_HOVER": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_PUDDLE_SLIME_SCOOT": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_BETTER_BREAK_ON_IMPACT": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_GOTO_PLAYER": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_ATTACK_PLAYER": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_FLEE_THREATS": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_METEOR_MAGNETISM": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_BOOM_EXPLOSION": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_CRYSTAL_SPIKES": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_DERVISH_TORNADO": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_MOSAIC_GLINT": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_TANGLE_VINES": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_TARR_GRAB": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_AGITATED_KILL": {
-            "type": "boolean",
-            "default": false
-          },
-          "HAS_SLIME_RUN_COMMAND": {
-            "type": "boolean",
-            "default": false
-          }
+      }
+    },
+    "CustomMesh": {
+      "type": "object",
+      "properties": {
+        "CUSTOM_MESH_ENABLED": {
+          "type": "boolean",
+          "default": false
+        },
+        "CUSTOM_MESH_OBJ_NAME": {
+          "type": "string",
+          "default": "obj_name_here"
+        },
+        "CUSTOM_MESH_JIGGLE": {
+          "type": "number",
+          "default": 1
+        },
+        "CUSTOM_MESH_SCALE": {
+          "type": "number",
+          "default": 1
+        },
+        "CUSTOM_MESH_RUBBER_EFFECT": {
+          "type": "boolean",
+          "default": true
+        },
+        "CUSTOM_MESH_IGNORE_LOD_INDEX": {
+          "type": "boolean",
+          "default": false
+        },
+        "STYLED_CUSTOM_MESH_ENABLED": {
+          "type": "boolean",
+          "default": false
+        },
+        "STYLED_CUSTOM_MESH_OBJ_NAME": {
+          "type": "string",
+          "default": "obj_name_here"
+        },
+        "STYLED_CUSTOM_MESH_JIGGLE": {
+          "type": "number",
+          "default": 1
+        },
+        "STYLED_CUSTOM_MESH_SCALE": {
+          "type": "number",
+          "default": 1
+        },
+        "STYLED_CUSTOM_MESH_RUBBER_EFFECT": {
+          "type": "boolean",
+          "default": true
+        },
+        "STYLED_CUSTOM_MESH_IGNORE_LOD_INDEX": {
+          "type": "boolean",
+          "default": false
         }
-      },
-      "CustomMesh": {
-        "type": "object",
-        "properties": {
-          "CUSTOM_MESH_ENABLED": {
-            "type": "boolean",
-            "default": false
-          },
-          "CUSTOM_MESH_OBJ_NAME": {
-            "type": "string",
-            "default": "obj_name_here"
-          },
-          "CUSTOM_MESH_JIGGLE": {
-            "type": "number",
-            "default": 1
-          },
-          "CUSTOM_MESH_SCALE": {
-            "type": "number",
-            "default": 1
-          },
-          "CUSTOM_MESH_RUBBER_EFFECT": {
-            "type": "boolean",
-            "default": true
-          },
-          "CUSTOM_MESH_IGNORE_LOD_INDEX": {
-            "type": "boolean",
-            "default": false
-          },
-          "STYLED_CUSTOM_MESH_ENABLED": {
-            "type": "boolean",
-            "default": false
-          },
-          "STYLED_CUSTOM_MESH_OBJ_NAME": {
-            "type": "string",
-            "default": "obj_name_here"
-          },
-          "STYLED_CUSTOM_MESH_JIGGLE": {
-            "type": "number",
-            "default": 1
-          },
-          "STYLED_CUSTOM_MESH_SCALE": {
-            "type": "number",
-            "default": 1
-          },
-          "STYLED_CUSTOM_MESH_RUBBER_EFFECT": {
-            "type": "boolean",
-            "default": true
-          },
-          "STYLED_CUSTOM_MESH_IGNORE_LOD_INDEX": {
-            "type": "boolean",
-            "default": false
-          }
+      }
+    },
+    "CustomPlort": {
+      "type": "object",
+      "properties": {
+        "PLORT_NAME": {
+          "type": "string",
+          "default": "Customizable Plort"
+        },
+        "HAS_ROCKS": {
+          "type": "boolean",
+          "default": false
+        },
+        "WHAT_PLORT_LOOKS_LIKE": {
+          "$ref": "#/definitions/Plorts",
+          "default": "PINK_PLORT"
+        },
+        "VACPACK_SIZE": {
+          "oneOf": [{ "$ref": "#/definitions/Other" }, { "enum": ["NORMAL", "LARGE", "GIANT"] }],
+          "default": "NORMAL"
+        },
+        "PLORT_PRICE": {
+          "type": "number",
+          "default": 50
+        },
+        "PLORT_SATURATION": {
+          "type": "number",
+          "default": 20
+        },
+        "PLORT_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "PLORT_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "PLORT_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "PLORT_VAC_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "ROCKS_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "ROCKS_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "ROCKS_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
         }
-      },
-      "CustomPlort": {
-        "type": "object",
-        "properties": {
-          "PLORT_NAME": {
-            "type": "string",
-              "default": "Customizable Plort"
-          },
-          "HAS_ROCKS": {
-            "type": "boolean",
-              "default": false
-          },
-          "WHAT_PLORT_LOOKS_LIKE": {
-            "$ref": "#/definitions/Plorts",
-              "default": 3
-          },
-          "VACPACK_SIZE": {
-              "oneOf": [{ "$ref": "#/definitions/Other" }, { "enum": ["NORMAL", "LARGE", "GIANT"] }],
-              "default": "NORMAL"
-          },
-          "PLORT_PRICE": {
-            "type": "number",
-              "default": 50
-          },
-          "PLORT_SATURATION": {
-            "type": "number",
-              "default": 20
-          },
-          "PLORT_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "PLORT_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "PLORT_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "PLORT_VAC_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-              "default": "255, 255, 255"
-          },
-          "ROCKS_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "ROCKS_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "ROCKS_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-              "default": "0, 0, 0"
-          }
+      }
+    },
+    "EatMapConfig": {
+      "type": "object",
+      "properties": {
+        "TRANSFORM_EATMAP": {
+          "type": "boolean",
+          "default": false
+        },
+        "PRODUCE_EATMAP": {
+          "type": "boolean",
+          "default": false
+        },
+        "TRANSFORM_WHAT_SLIME_EATS": {
+          "$ref": "#/definitions/Foods",
+          "default": "CARROT_VEGGIE"
+        },
+        "TRANSFORM_WHAT_SLIME_BECOMES": {
+          "$ref": "#/definitions/Slimes",
+          "default": "GOLD_SLIME"
+        },
+        "TRANSFORM_EAT_DRIVER": {
+          "$ref": "#/definitions/Emotions",
+          "default": "HUNGER"
+        },
+        "TRANSFORM_MIN_DRIVE": {
+          "type": "number",
+          "default": 1
+        },
+        "TRANSFORM_EXTRA_DRIVE": {
+          "type": "number",
+          "default": 0
+        },
+        "PRODUCE_WHAT_SLIME_PRODUCES": {
+          "$ref": "#/definitions/Plorts",
+          "default": "GOLD_PLORT"
+        },
+        "PRODUCE_WHAT_SLIME_EATS": {
+          "$ref": "#/definitions/Foods",
+          "default": 10
+        },
+        "PRODUCE_EAT_DRIVER": {
+          "$ref": "#/definitions/Emotions",
+          "default": 3
+        },
+        "PRODUCE_IS_FAVORITE_FOOD": {
+          "type": "boolean",
+          "default": false
+        },
+        "PRODUCE_FAVORITE_PRODUCTION_COUNT": {
+          "type": "number",
+          "default": 2
+        },
+        "PRODUCE_MIN_DRIVE": {
+          "type": "number",
+          "default": 1
+        },
+        "PRODUCE_EXTRA_DRIVE": {
+          "type": "number",
+          "default": 0
         }
-      },
-      "EatMapConfig": {
-        "type": "object",
-        "properties": {
-          "TRANSFORM_EATMAP": {
-            "type": "boolean",
-              "default": false
-          },
-          "PRODUCE_EATMAP": {
-            "type": "boolean",
-              "default": false
-          },
-          "TRANSFORM_WHAT_SLIME_EATS": {
-            "$ref": "#/definitions/Foods",
-              "default": 5
-          },
-          "TRANSFORM_WHAT_SLIME_BECOMES": {
-            "$ref": "#/definitions/Slimes",
-              "default": 4
-          },
-          "TRANSFORM_EAT_DRIVER": {
-            "$ref": "#/definitions/Emotions",
-              "default": 3
-          },
-          "TRANSFORM_MIN_DRIVE": {
-            "type": "number",
-              "default": 1
-          },
-          "TRANSFORM_EXTRA_DRIVE": {
-            "type": "number",
-              "default": 0
-          },
-          "PRODUCE_WHAT_SLIME_PRODUCES": {
-            "$ref": "#/definitions/Plorts",
-              "default": 3
-          },
-          "PRODUCE_WHAT_SLIME_EATS": {
-            "$ref": "#/definitions/Foods",
-              "default": 10
-          },
-          "PRODUCE_EAT_DRIVER": {
-            "$ref": "#/definitions/Emotions",
-              "default": 3
-          },
-          "PRODUCE_IS_FAVORITE_FOOD": {
-            "type": "boolean",
-              "default": false
-          },
-          "PRODUCE_FAVORITE_PRODUCTION_COUNT": {
-            "type": "number",
-              "default": 2
-          },
-          "PRODUCE_MIN_DRIVE": {
-            "type": "number",
-              "default": 1
-          },
-          "PRODUCE_EXTRA_DRIVE": {
-            "type": "number",
-              "default": 0
-          }
+      }
+    },
+    "LargoProperties": {
+      "type": "object",
+      "properties": {
+        "LARGO_PROPERTY_1": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 6
+        },
+        "LARGO_PROPERTY_2": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 9
+        },
+        "LARGO_PROPERTY_3": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 16
+        },
+        "LARGO_PROPERTY_4": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 1
+        },
+        "LARGO_PROPERTY_5": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 1
+        },
+        "LARGO_PROPERTY_6": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 1
+        },
+        "LARGO_PROPERTY_7": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 1
+        },
+        "LARGO_PROPERTY_8": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 1
+        },
+        "LARGO_PROPERTY_9": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 1
+        },
+        "LARGO_PROPERTY_10": {
+          "$ref": "#/definitions/LargoProps",
+          "default": 1
         }
-      },
-      "LargoProperties": {
-        "type": "object",
-        "properties": {
-          "LARGO_PROPERTY_1": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 6
-          },
-          "LARGO_PROPERTY_2": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 9
-          },
-          "LARGO_PROPERTY_3": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 16
-          },
-          "LARGO_PROPERTY_4": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 1
-          },
-          "LARGO_PROPERTY_5": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 1
-          },
-          "LARGO_PROPERTY_6": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 1
-          },
-          "LARGO_PROPERTY_7": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 1
-          },
-          "LARGO_PROPERTY_8": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 1
-          },
-          "LARGO_PROPERTY_9": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 1
-          },
-          "LARGO_PROPERTY_10": {
-            "$ref": "#/definitions/LargoProps",
-            "default": 1
-          }
+      }
+    },
+    "SpawnZoneConfig": {
+      "type": "object",
+      "properties": {
+        "SPAWN_EVERYWHERE": {
+          "type": "boolean",
+          "default": false
+        },
+        "SPAWN_CHANCE": {
+          "type": "number",
+          "default": 0.3
+        },
+        "SPAWN_ZONE_1": {
+          "$ref": "#/definitions/Zones",
+          "default": "RANCH"
+        },
+        "SPAWN_ZONE_2": {
+          "$ref": "#/definitions/Zones",
+          "default": "NONE"
+        },
+        "SPAWN_ZONE_3": {
+          "$ref": "#/definitions/Zones",
+          "default": "NONE"
+        },
+        "SPAWN_ZONE_4": {
+          "$ref": "#/definitions/Zones",
+          "default": "NONE"
+        },
+        "SPAWN_ZONE_5": {
+          "$ref": "#/definitions/Zones",
+          "default": "NONE"
         }
-      },
-      "SpawnZoneConfig": {
-        "type": "object",
-        "properties": {
-          "SPAWN_EVERYWHERE": {
-            "type": "boolean",
-            "default": false
-          },
-          "SPAWN_CHANCE": {
-            "type": "number",
-            "default": 0.3
-          },
-          "SPAWN_ZONE_1": {
-            "$ref": "#/definitions/Zones",
-            "default": 3
-          },
-          "SPAWN_ZONE_2": {
-            "$ref": "#/definitions/Zones",
-            "default": 1
-          },
-          "SPAWN_ZONE_3": {
-            "$ref": "#/definitions/Zones",
-            "default": 1
-          },
-          "SPAWN_ZONE_4": {
-            "$ref": "#/definitions/Zones",
-            "default": 1
-          },
-          "SPAWN_ZONE_5": {
-            "$ref": "#/definitions/Zones",
-            "default": 1
-          }
+      }
+    },
+    "StructureConfig": {
+      "type": "object",
+      "properties": {
+        "RAD_AURA_MIDDLE_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "RAD_AURA_EDGE_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "PHOSPHOR_GLOW_TOP_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "PHOSPHOR_GLOW_MID_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "PHOSPHOR_GLOW_BOT_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "BOOM_CRACKS_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "STYLED_RAD_AURA_MIDDLE_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "STYLED_RAD_AURA_EDGE_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "STYLED_PHOSPHOR_GLOW_TOP_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "STYLED_PHOSPHOR_GLOW_MID_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "STYLED_PHOSPHOR_GLOW_BOT_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "STYLED_BOOM_CRACKS_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
         }
-      },
-      "StructureConfig": {
-        "type": "object",
-        "properties": {
-          "RAD_AURA_MIDDLE_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "RAD_AURA_EDGE_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "PHOSPHOR_GLOW_TOP_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "PHOSPHOR_GLOW_MID_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "PHOSPHOR_GLOW_BOT_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "BOOM_CRACKS_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "STYLED_RAD_AURA_MIDDLE_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "STYLED_RAD_AURA_EDGE_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "STYLED_PHOSPHOR_GLOW_TOP_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "STYLED_PHOSPHOR_GLOW_MID_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "STYLED_PHOSPHOR_GLOW_BOT_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "STYLED_BOOM_CRACKS_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          }
+      }
+    },
+    "StyleAppearance": {
+      "type": "object",
+      "properties": {
+        "SECRET_STYLES_ENABLED": {
+          "type": "boolean",
+          "default": false
+        },
+        "STYLE_NAME": {
+          "type": "string",
+          "default": "De-Customizable Slime"
+        },
+        "WHAT_STYLE_MATERIAL": {
+          "$ref": "#/definitions/Slimes",
+          "default": "PINK_SLIME"
+        },
+        "STYLE_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "STYLE_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "STYLE_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "STYLE_SPEC_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "STYLE_VAC_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "MOUTH_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "MOUTH_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "MOUTH_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "EYES_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "EYES_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "EYES_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "255, 255, 255"
+        },
+        "SPLAT_TOP_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "SPLAT_MIDDLE_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
+        },
+        "SPLAT_BOTTOM_COLOR_RGB": {
+          "type": "string",
+          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
+          "default": "0, 0, 0"
         }
-      },
-      "StyleAppearance": {
-        "type": "object",
-        "properties": {
-          "SECRET_STYLES_ENABLED": {
-            "type": "boolean",
-            "default": false
-          },
-          "STYLE_NAME": {
-            "type": "string",
-            "default": "De-Customizable Slime"
-          },
-          "WHAT_STYLE_MATERIAL": {
-            "$ref": "#/definitions/Slimes",
-            "default": 3
-          },
-          "STYLE_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "STYLE_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "STYLE_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "STYLE_SPEC_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "STYLE_VAC_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "MOUTH_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "MOUTH_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "MOUTH_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "EYES_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "EYES_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "EYES_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "255, 255, 255"
-          },
-          "SPLAT_TOP_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "SPLAT_MIDDLE_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          },
-          "SPLAT_BOTTOM_COLOR_RGB": {
-            "type": "string",
-            "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-            "default": "0, 0, 0"
-          }
-        }
-      },
-      "StyleCosmetic": {
-        "type": "object",
-        "properties": {
-          "COSMETIC_POD_ID_NAME": {
-            "type": "string",
-            "default": "CustomizableCosmeticPod"
-          },
-          "COSMETIC_POD_POSITION": {
-            "type": "string",
-            "default": "103.6, 12.3, -136.7"
-          },
-          "COSMETIC_POD_PARENT": {
-            "type": "string",
-            "default": "zoneRANCH/cellRanch_Entrance/Sector"
-          },
-          "COSMETIC_POD_ROTATION": {
-            "type": "string",
-            "default": "0, 0, 0"
-          }
+      }
+    },
+    "StyleCosmetic": {
+      "type": "object",
+      "properties": {
+        "COSMETIC_POD_ID_NAME": {
+          "type": "string",
+          "default": "CustomizableCosmeticPod"
+        },
+        "COSMETIC_POD_POSITION": {
+          "type": "string",
+          "default": "103.6, 12.3, -136.7"
+        },
+        "COSMETIC_POD_PARENT": {
+          "type": "string",
+          "default": "zoneRANCH/cellRanch_Entrance/Sector"
+        },
+        "COSMETIC_POD_ROTATION": {
+          "type": "string",
+          "default": "0, 0, 0"
         }
       }
     }
   }
+}
