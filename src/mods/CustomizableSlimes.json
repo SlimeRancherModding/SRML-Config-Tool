@@ -197,7 +197,6 @@
         },
         "WHAT_SLIME_LOOKS_LIKE": {
           "$ref": "#/definitions/Slimes",
-          "enum": [{"$ref": "#/definitions/Slimes"}],
           "default": "PINK_SLIME"
         },
         "WHAT_SLIME_ACTS_LIKE": {
@@ -211,10 +210,10 @@
         "WHAT_SLIME_PRODUCES": {
           "type": "array",
           "items": {
-            "oneOf": [
-              { "$ref": "#/definitions/Slimes" },
-              { "$ref": "#/definitions/Foods" },
-              { "$ref": "#/definitions/Plorts" }
+            "anyOf": [
+              { "$ref": "#/definitions/Plorts" },
+              { "$ref": "#/definitions/Crafts" },
+              { "$ref": "#/definitions/Crates" }
             ]
           },
           "default": ["PINK_SLIME"]
@@ -222,33 +221,41 @@
         "WHAT_SLIME_EATS": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/FoodGroups"
+            "anyOf": [{ "$ref": "#/definitions/Foods" }]
           },
           "default": ["VEGGIES"]
         },
         "ADDITIONAL_FOOD_SLIME_EATS": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Foods"
+            "anyOf": [{ "$ref": "#/definitions/Foods" }]
           },
           "default": ["CARROT_VEGGIE"]
         },
         "FAVORITE_SLIME_EATS": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Foods"
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Foods"
+              }
+            ]
           },
           "default": ["HEART_BEET"]
         },
         "FAVORITE_SLIME_TOY": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Toys"
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Toys"
+              }
+            ]
           },
           "default": ["KOOKADOBA_BALL"]
         },
         "VACPACK_SIZE": {
-          "oneOf": [{ "$ref": "#/definitions/Other" }, { "enum": ["NORMAL", "LARGE", "GIANT"] }],
+          "enum": ["NORMAL", "LARGE", "GIANT"],
           "default": "NORMAL"
         },
         "SLIMEPEDIA_TITLE": {
@@ -623,7 +630,7 @@
           "default": "PINK_PLORT"
         },
         "VACPACK_SIZE": {
-          "oneOf": [{ "$ref": "#/definitions/Other" }, { "enum": ["NORMAL", "LARGE", "GIANT"] }],
+          "enum": ["NORMAL", "LARGE", "GIANT"],
           "default": "NORMAL"
         },
         "PLORT_PRICE": {
