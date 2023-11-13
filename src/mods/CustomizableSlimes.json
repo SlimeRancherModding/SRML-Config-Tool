@@ -3,6 +3,7 @@
   "type": "object",
   "definitions": {
     "Slimes": {
+      "label": "Slimes",
       "enum": [
         "RAD_SLIME",
         "ROCK_SLIME",
@@ -26,6 +27,7 @@
       ]
     },
     "Plorts": {
+      "label": "Plorts",
       "enum": [
         "RAD_PLORT",
         "ROCK_PLORT",
@@ -49,6 +51,7 @@
       ]
     },
     "Foods": {
+      "label": "Foods",
       "enum": [
         "CUBERRY_FRUIT",
         "MANGO_FRUIT",
@@ -73,9 +76,11 @@
       ]
     },
     "FoodGroups": {
+      "label": "Food Groups",
       "enum": ["VEGGIES", "FRUIT", "MEAT", "GINGER", "PLORTS", "NONTARRGOLD_SLIMES"]
     },
     "Crafts": {
+      "label": "Crafts",
       "enum": [
         "PRIMORDY_OIL_CRAFT",
         "DEEP_BRINE_CRAFT",
@@ -96,6 +101,7 @@
       ]
     },
     "Toys": {
+      "label": "Toys",
       "enum": [
         "KOOKADOBA_BALL",
         "BEACH_BALL_TOY",
@@ -121,6 +127,7 @@
       ]
     },
     "Crates": {
+      "label": "Crates",
       "enum": [
         "CRATE_DESERT_01",
         "CRATE_MOSS_01",
@@ -131,9 +138,11 @@
       ]
     },
     "Emotions": {
+      "label": "Emotions",
       "enum": ["NONE", "HUNGER", "AGITATION", "FEAR"]
     },
     "Zones": {
+      "label": "Zones",
       "enum": [
         "NONE",
         "RANCH",
@@ -153,6 +162,7 @@
       ]
     },
     "LargoProps": {
+      "label": "Largo Properties",
       "enum": [
         "NONE",
         "SWAP_EYES",

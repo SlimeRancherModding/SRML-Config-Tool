@@ -158,35 +158,31 @@ export const Config: FC<Props> = ({ modSelected, onChange }) => {
         break;
         case 'array':
           if (optionValue.items && optionValue.items.anyOf) {
-            const { anyOf } = optionValue.items;
-        
             inputElement = (
               <select
                 value={optionValue.changedValue || optionValue.default}
                 onChange={(e) => handleMultiChange(propertyName, key, e)}
                 multiple
               >
-                {anyOf.length === 1 ? (
-                  anyOf[0].enum.map((item) => (
-                    <option key={item} value={item}>
-                      {item}
-                    </option>
-                  ))
-                ) : (
-                  anyOf.map((schema, index) => (
-                    <optgroup label={`---`} key={index}>
-                      {schema.enum.map((item: string) => (
-                        <option key={item} value={item}>
-                          {item}
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))
-                )}
+                {optionValue.items.anyOf.map((schema) => {
+                  if (schema.enum) {
+                    return (
+                      <optgroup label={schema.label} key={schema.label}>
+                        {schema.enum.map((item: string) => (
+                          <option key={item} value={item}>
+                            {item}
+                          </option>
+                        ))}
+                      </optgroup>
+                    );
+                  }
+                  return null; // Handle other types if necessary
+                })}
               </select>
             );
           }
           break;
+        
       default:
         inputElement = null;
         break;
