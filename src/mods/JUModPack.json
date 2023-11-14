@@ -30,83 +30,107 @@
     "MoldableChroma": {
       "type": "object",
       "properties": {
+        "LIGHT_MOLDED_COLOR": {
+          "type":"array",
+          "internal": true
+        },
         "LIGHT_MOLDED_COLOR_1": {
           "type": "string",
+          "partOf": "LIGHT_MOLDED_COLOR",
           "color": true,
             "default": "#808080"
         },
         "LIGHT_MOLDED_COLOR_2": {
             "type": "string",
+            "partOf": "LIGHT_MOLDED_COLOR",
             "color": true,
             "default": "#000000"
         },
         "LIGHT_MOLDED_COLOR_3": {
             "type": "string",
+            "partOf": "LIGHT_MOLDED_COLOR",
             "color": true,
             "default": "#FFFFFF"
         },
         "LIGHT_MOLDED_COLOR_4": {
             "type": "string",
+            "partOf": "LIGHT_MOLDED_COLOR",
             "color": true,
             "default": "#808080"
         },
         "LIGHT_MOLDED_COLOR_5": {
             "type": "string",
+            "partOf": "LIGHT_MOLDED_COLOR",
             "color": true,
             "default": "#808080"
         },
         "LIGHT_MOLDED_COLOR_6": {
             "type": "string",
+            "partOf": "LIGHT_MOLDED_COLOR",
             "color": true,
             "default": "#000000"
         },
         "LIGHT_MOLDED_COLOR_7": {
             "type": "string",
+            "partOf": "LIGHT_MOLDED_COLOR",
             "color": true,
             "default": "#FFFFFF"
         },
         "LIGHT_MOLDED_COLOR_8": {
             "type": "string",
+            "partOf": "LIGHT_MOLDED_COLOR",
             "color": true,
             "default": "#808080"
         },
+        "DARK_MOLDED_COLOR": {
+          "type":"array",
+          "internal": true
+        },
         "DARK_MOLDED_COLOR_1": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#808080"
         },
         "DARK_MOLDED_COLOR_2": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#000000"
         },
         "DARK_MOLDED_COLOR_3": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#FFFFFF"
         },
         "DARK_MOLDED_COLOR_4": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#808080"
         },
         "DARK_MOLDED_COLOR_5": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#808080"
         },
         "DARK_MOLDED_COLOR_6": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#000000"
         },
         "DARK_MOLDED_COLOR_7": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#FFFFFF"
         },
         "DARK_MOLDED_COLOR_8": {
             "type": "string",
+            "partOf": "DARK_MOLDED_COLOR",
             "color": true,
             "default": "#808080"
         }

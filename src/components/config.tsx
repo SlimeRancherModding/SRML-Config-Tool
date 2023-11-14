@@ -53,21 +53,36 @@ export const Config: FC<Props> = ({ modSelected, onChange }) => {
 
   const exportConfig = (propertyName: string) => {
     const configToExport = config[propertyName] as any;
+    const groupedProperties: { [key: string]: string[] } = {};
+  
     let iniContent = `[CONFIG]\n`;
-
+  
     Object.entries(configToExport.properties).forEach(([key, value]: [string, any]) => {
-      const type = value.type ? value.type.toLowerCase() : 'unknown';
+      if (!value.internal) {
 
-      let formattedValue = value.changedValue || value.default;
-
-      if (Array.isArray(formattedValue)) {
-        // Format array values with square brackets
-        formattedValue = `[${formattedValue.join(', ')}]`;
-      } else if (type === 'string') {
-        formattedValue = `"${formattedValue}"`;
+      if (value.partOf) {
+        if (!groupedProperties[value.partOf]) {
+          groupedProperties[value.partOf] = [];
+        }
+        groupedProperties[value.partOf].push(value.changedValue || value.default);
+      } else {
+        const type = value.type ? value.type.toLowerCase() : 'unknown';
+        let formattedValue = Array.isArray(value.changedValue || value.default)
+          ? `[${(value.changedValue || value.default).join(', ')}]`
+          : type === 'string'
+          ? `"${value.changedValue || value.default}"`
+          : value.changedValue || value.default;
+  
+        const section = `;${type}\n${key} = ${formattedValue}\n\n`;
+        iniContent += section;
       }
-
-      iniContent += `;${type}\n${key} = ${formattedValue}\n\n`;
+    }
+    });
+  
+    Object.entries(groupedProperties).forEach(([groupName, properties]) => {
+      const formattedValue = JSON.stringify(properties);
+      const section = `;array\n${groupName} = ${formattedValue}\n\n`;
+      iniContent += section;
     });
 
     const fileName = `${propertyName}.ini`;
@@ -205,12 +220,17 @@ export const Config: FC<Props> = ({ modSelected, onChange }) => {
           {propertyValue.description && <p>{propertyValue.description}</p>}
           {!isCollapsed && propertyValue && propertyValue.properties && (
             <div>
-              {Object.entries(propertyValue.properties).map(([key, value]: [string, any]) => (
-                <div key={key}>
-                  {renderConfigOption(propertyName, key, value)}
-                  {value.description && <p>{value.description}</p>}
-                </div>
-              ))}
+              {Object.entries(propertyValue.properties).map(([key, value]: [string, any]) => {
+                if (value.internal === true) return null;
+
+                return (
+                  <div key={key}>
+                    {renderConfigOption(propertyName, key, value)}
+                    {value.description && <p>{value.description}</p>}
+                  </div>
+                );
+              })}
+
             </div>
           )}
         </div>
