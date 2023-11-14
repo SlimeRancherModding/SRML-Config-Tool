@@ -35,23 +35,6 @@ export const Config: FC<Props> = ({ modSelected, onChange }) => {
     }
   };
 
-  const handleColorChange = (propertyName: string, configKey: string, event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = hexToRgb(event.target.value);
-    setConfig((prevConfig) => ({
-      ...prevConfig,
-      [propertyName]: {
-        ...prevConfig[propertyName],
-        properties: {
-          ...prevConfig[propertyName]?.properties,
-          [configKey]: { ...prevConfig[propertyName]?.properties?.[configKey], changedValue: newValue },
-        },
-      },
-    }));
-    if (onChange) {
-      onChange(newValue, `${propertyName}.${configKey}`);
-    }
-  };
-
   const handleMultiChange = (propertyName: string, configKey: string, event: React.ChangeEvent<HTMLSelectElement>) => {
     const newValue = Array.from(event.target.selectedOptions, (option) => option.value);
     // Update the state directly for the specific config key within the property
@@ -96,31 +79,21 @@ export const Config: FC<Props> = ({ modSelected, onChange }) => {
     link.click();
   };
 
-  function hexToRgb(hex: string) {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
-  }
-
-  function rgbToHex(rgb: string) {
-    const [r, g, b] = rgb.split(',').map((item: string) => parseInt(item.trim(), 10));
-    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
-  }
-
   const renderConfigOption = (propertyName: string, key: string, optionValue: any) => {
     let inputElement = null;
 
     switch (optionValue.type) {
       case 'string':
-        if (optionValue.pattern === '^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$') {
+        if (optionValue.color) {
           const selectedColor = optionValue.changedValue || optionValue.default;
 
           inputElement = (
             <>
               <input
                 type="color"
-                value={rgbToHex(selectedColor)}
+                value={selectedColor}
                 onChange={(e) => {
-                  handleColorChange(propertyName, key, e);
+                  handleChange(propertyName, key, e);
                 }}
               />{' '}
               <label>{optionValue.changedValue || optionValue.default}</label>
@@ -229,6 +202,7 @@ export const Config: FC<Props> = ({ modSelected, onChange }) => {
               Export
             </button>
           </h2>
+          {propertyValue.description && <p>{propertyValue.description}</p>}
           {!isCollapsed && propertyValue && propertyValue.properties && (
             <div>
               {Object.entries(propertyValue.properties).map(([key, value]: [string, any]) => (

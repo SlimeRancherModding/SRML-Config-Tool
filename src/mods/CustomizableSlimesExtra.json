@@ -298,73 +298,73 @@
         },
         "SLIME_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "SLIME_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "SLIME_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "SLIME_SPEC_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "SLIME_VAC_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "MOUTH_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "MOUTH_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "MOUTH_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "EYES_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "EYES_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "EYES_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "SPLAT_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "SPLAT_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "SPLAT_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         }
       }
     },
@@ -653,38 +653,38 @@
         },
         "PLORT_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "PLORT_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "PLORT_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "PLORT_VAC_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "ROCKS_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "ROCKS_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "ROCKS_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         }
       }
     },
@@ -832,63 +832,63 @@
       "properties": {
         "RAD_AURA_MIDDLE_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "RAD_AURA_EDGE_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "PHOSPHOR_GLOW_TOP_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "PHOSPHOR_GLOW_MID_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "PHOSPHOR_GLOW_BOT_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "BOOM_CRACKS_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "STYLED_RAD_AURA_MIDDLE_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "STYLED_RAD_AURA_EDGE_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "STYLED_PHOSPHOR_GLOW_TOP_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "STYLED_PHOSPHOR_GLOW_MID_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "STYLED_PHOSPHOR_GLOW_BOT_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "STYLED_BOOM_CRACKS_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         }
       }
     },
@@ -909,73 +909,73 @@
         },
         "STYLE_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "STYLE_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "STYLE_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "STYLE_SPEC_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "STYLE_VAC_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "MOUTH_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "MOUTH_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "MOUTH_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "EYES_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "EYES_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "EYES_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "255, 255, 255"
+          "color": true,
+          "default": "#000000"
         },
         "SPLAT_TOP_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "SPLAT_MIDDLE_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         },
         "SPLAT_BOTTOM_COLOR_RGB": {
           "type": "string",
-          "pattern": "^\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*,\\s*\\d{1,3}\\s*$",
-          "default": "0, 0, 0"
+          "color": true,
+          "default": "#ffffff"
         }
       }
     },

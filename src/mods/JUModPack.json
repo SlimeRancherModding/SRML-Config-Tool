@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "Slimes": {
+      "label": "Slimes",
+      "enum": [
+        "RAD_SLIME",
+        "ROCK_SLIME",
+        "PINK_SLIME",
+        "GOLD_SLIME",
+        "BOOM_SLIME",
+        "PHOSPHOR_SLIME",
+        "TABBY_SLIME",
+        "HUNTER_SLIME",
+        "HONEY_SLIME",
+        "PUDDLE_SLIME",
+        "CRYSTAL_SLIME",
+        "QUANTUM_SLIME",
+        "DERVISH_SLIME",
+        "MOSAIC_SLIME",
+        "TANGLE_SLIME",
+        "FIRE_SLIME",
+        "SABER_SLIME",
+        "QUICKSILVER_SLIME",
+        "CUSTOMIZABLE_SLIME"
+      ]
+    }},
+  "properties": {
+    "MoldableChroma": {
+      "type": "object",
+      "properties": {
+        "LIGHT_MOLDED_COLOR_1": {
+          "type": "string",
+          "color": true,
+            "default": "#808080"
+        },
+        "LIGHT_MOLDED_COLOR_2": {
+            "type": "string",
+            "color": true,
+            "default": "#000000"
+        },
+        "LIGHT_MOLDED_COLOR_3": {
+            "type": "string",
+            "color": true,
+            "default": "#FFFFFF"
+        },
+        "LIGHT_MOLDED_COLOR_4": {
+            "type": "string",
+            "color": true,
+            "default": "#808080"
+        },
+        "LIGHT_MOLDED_COLOR_5": {
+            "type": "string",
+            "color": true,
+            "default": "#808080"
+        },
+        "LIGHT_MOLDED_COLOR_6": {
+            "type": "string",
+            "color": true,
+            "default": "#000000"
+        },
+        "LIGHT_MOLDED_COLOR_7": {
+            "type": "string",
+            "color": true,
+            "default": "#FFFFFF"
+        },
+        "LIGHT_MOLDED_COLOR_8": {
+            "type": "string",
+            "color": true,
+            "default": "#808080"
+        },
+        "DARK_MOLDED_COLOR_1": {
+            "type": "string",
+            "color": true,
+            "default": "#808080"
+        },
+        "DARK_MOLDED_COLOR_2": {
+            "type": "string",
+            "color": true,
+            "default": "#000000"
+        },
+        "DARK_MOLDED_COLOR_3": {
+            "type": "string",
+            "color": true,
+            "default": "#FFFFFF"
+        },
+        "DARK_MOLDED_COLOR_4": {
+            "type": "string",
+            "color": true,
+            "default": "#808080"
+        },
+        "DARK_MOLDED_COLOR_5": {
+            "type": "string",
+            "color": true,
+            "default": "#808080"
+        },
+        "DARK_MOLDED_COLOR_6": {
+            "type": "string",
+            "color": true,
+            "default": "#000000"
+        },
+        "DARK_MOLDED_COLOR_7": {
+            "type": "string",
+            "color": true,
+            "default": "#FFFFFF"
+        },
+        "DARK_MOLDED_COLOR_8": {
+            "type": "string",
+            "color": true,
+            "default": "#808080"
+        }
+      }
+    },
+    "MoldableSlime": {
+      "type": "object",
+      "properties": {
+        "MOLDING": {
+          "type": "boolean",
+          "default": false
+        },
+        "MOLDED_APPEARANCE": {
+            "$ref": "#/definitions/Slimes",
+            "default": "PINK_SLIME"
+          }
+      }
+    }
+  }
+}
