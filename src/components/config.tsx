@@ -29,7 +29,7 @@ const Config: React.FC<ConfigProps> = ({ modName }) => {
       // Handle nested objects
       return Object.entries(value).map(([key, subValue]) => (
         <div key={key}>
-          <label htmlFor={`${id}-${key}`}>{key}:</label>
+          <label htmlFor={`${id}-${key}`}>{key}: </label>
           {renderInput(subValue, `${id}-${key}`)}
         </div>
       ));
@@ -44,7 +44,10 @@ const Config: React.FC<ConfigProps> = ({ modName }) => {
 
     if (typeof value === 'boolean') {
       return (
-        <input type="checkbox" id={id} checked={value} onChange={(e) => console.log(e.target.checked)} />
+        <select id={id} value={String(value)} onChange={(e) => console.log(e.target.value)}>
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
       );
     }
 
