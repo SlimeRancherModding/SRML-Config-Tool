@@ -36,9 +36,20 @@ const Config: React.FC<ConfigProps> = ({ modName }) => {
     }
 
     // Handle non-object values
+
+    if (typeof value === 'string' && /^#([0-9a-f]{3}){1,2}$/i.test(value)) {
+      return (
+        <><input
+          type="color"
+          id={id}
+          value={value}
+          onChange={(e) => console.log(e.target.value)} />{' '}<span>{value}</span></>
+      );
+    }
+
     if (typeof value === 'string') {
       return (
-        <input type="text" id={id} value={value} onChange={(e) => console.log(e.target.value)} />
+        <textarea id={id} value={value} onChange={(e) => console.log(e.target.value)} />
       );
     }
 
