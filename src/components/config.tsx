@@ -1,244 +1,77 @@
-import React, { FC, useState, useEffect } from 'react';
-import { mods } from '../mods/mods';
+// config.tsx
+import React from 'react';
+import { ModsDefaults } from '../mods/mods';
 
-interface Props {
-  modSelected: string;
-  onChange?: (value: string, configName: string) => void;
+interface ConfigProps {
+  modName: string | null;
 }
 
-export const Config: FC<Props> = ({ modSelected, onChange }) => {
-  const [config, setConfig] = useState<{ [key: string]: object }>({});
-  const [collapsedGroups, setCollapsedGroups] = useState<{ [key: string]: boolean }>({});
-  const selectedMod = modSelected as keyof typeof mods;
+const Config: React.FC<ConfigProps> = ({ modName }) => {
+  const modConfig = modName ? ModsDefaults[modName] : null;
 
-  useEffect(() => {
-    if (mods[selectedMod]) {
-      setConfig(mods[selectedMod].properties);
-    }
-  }, [selectedMod]);
+  console.log(modConfig);  // Check the console to see if modConfig is correct
 
-  const handleChange = (propertyName: string, configKey: string, event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value;
-    // Update the state directly for the specific config key within the property
-    setConfig((prevConfig) => ({
-      ...prevConfig,
-      [propertyName]: {
-        ...prevConfig[propertyName],
-        properties: {
-          ...prevConfig[propertyName]?.properties,
-          [configKey]: { ...prevConfig[propertyName]?.properties?.[configKey], changedValue: newValue },
-        },
-      },
-    }));
-    if (onChange) {
-      onChange(newValue, `${propertyName}.${configKey}`);
+  const renderInputs = () => {
+    if (!modConfig) {
+      return <p>Please select a mod.</p>;
     }
+
+    return Object.entries(modConfig).map(([setting, value]) => (
+      <div key={setting}>
+        <h3>{setting}:</h3>
+        {renderInput(value, setting)}
+      </div>
+    ));
   };
 
-  const handleMultiChange = (propertyName: string, configKey: string, event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newValue = Array.from(event.target.selectedOptions, (option) => option.value);
-    // Update the state directly for the specific config key within the property
-    setConfig((prevConfig) => ({
-      ...prevConfig,
-      [propertyName]: {
-        ...(prevConfig[propertyName] as object),
-        properties: {
-          ...prevConfig[propertyName].properties,
-          [configKey]: { ...(prevConfig[propertyName].properties[configKey] as object), changedValue: newValue },
-        },
-      },
-    }));
-    onChange(newValue, `${propertyName}.${configKey}`);
-  };
-
-  const exportConfig = (propertyName: string) => {
-    const configToExport = config[propertyName] as any;
-    const groupedProperties: { [key: string]: string[] } = {};
-  
-    let iniContent = `[CONFIG]\n`;
-  
-    Object.entries(configToExport.properties).forEach(([key, value]: [string, any]) => {
-      if (!value.internal) {
-
-      if (value.partOf) {
-        if (!groupedProperties[value.partOf]) {
-          groupedProperties[value.partOf] = [];
-        }
-        groupedProperties[value.partOf].push(value.changedValue || value.default);
-      } else {
-        const type = value.type ? value.type.toLowerCase() : 'unknown';
-        let formattedValue = Array.isArray(value.changedValue || value.default)
-          ? `[${(value.changedValue || value.default).join(', ')}]`
-          : type === 'string'
-          ? `"${value.changedValue || value.default}"`
-          : value.changedValue || value.default;
-  
-        const section = `;${type}\n${key} = ${formattedValue}\n\n`;
-        iniContent += section;
-      }
-    }
-    });
-  
-    Object.entries(groupedProperties).forEach(([groupName, properties]) => {
-      const formattedValue = JSON.stringify(properties);
-      const section = `;array\n${groupName} = ${formattedValue}\n\n`;
-      iniContent += section;
-    });
-
-    const fileName = `${propertyName}.ini`;
-    const blob = new Blob([iniContent], { type: 'text/plain' });
-
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = fileName;
-    link.click();
-  };
-
-  const renderConfigOption = (propertyName: string, key: string, optionValue: any) => {
-    let inputElement = null;
-
-    switch (optionValue.type) {
-      case 'string':
-        if (optionValue.color) {
-          const selectedColor = optionValue.changedValue || optionValue.default;
-
-          inputElement = (
-            <>
-              <input
-                type="color"
-                value={selectedColor}
-                onChange={(e) => {
-                  handleChange(propertyName, key, e);
-                }}
-              />{' '}
-              <label>{optionValue.changedValue || optionValue.default}</label>
-            </>
-          );
-        } else {
-          inputElement = (
-            <input
-              type="text"
-              value={optionValue.changedValue || optionValue.default}
-              onChange={(e) => handleChange(propertyName, key, e)}
-            />
-          );
-        }
-        break;
-      case 'number':
-        inputElement = (
-          <input
-            type="number"
-            value={optionValue.changedValue || optionValue.default}
-            onChange={(e) => handleChange(propertyName, key, e)}
-          />
-        );
-        break;
-      case 'boolean':
-        inputElement = (
-          <select
-            value={optionValue.changedValue || optionValue.default}
-            onChange={(e) => handleChange(propertyName, key, e)}
-          >
-            <option value="true">true</option>
-            <option value="false">false</option>
-          </select>
-        );
-        break;
-        case 'array':
-          if (optionValue.items && optionValue.items.anyOf) {
-            inputElement = (
-              <select
-                value={optionValue.changedValue || optionValue.default}
-                onChange={(e) => handleMultiChange(propertyName, key, e)}
-                multiple
-              >
-                {optionValue.items.anyOf.map((schema) => {
-                  if (schema.enum) {
-                    return (
-                      <optgroup label={schema.label} key={schema.label}>
-                        {schema.enum.map((item: string) => (
-                          <option key={item} value={item}>
-                            {item}
-                          </option>
-                        ))}
-                      </optgroup>
-                    );
-                  }
-                  return null; // Handle other types if necessary
-                })}
-              </select>
-            );
-          }
-          break;
-        
-      default:
-        inputElement = null;
-        break;
+  const renderInput = (value: any, id: string) => {
+    if (typeof value === 'object' && value !== null) {
+      // Handle nested objects
+      return Object.entries(value).map(([key, subValue]) => (
+        <div key={key}>
+          <label htmlFor={`${id}-${key}`}>{key}: </label>
+          {renderInput(subValue, `${id}-${key}`)}
+        </div>
+      ));
     }
 
-    if (optionValue.enum) {
-      inputElement = (
-        <select
-          value={optionValue.changedValue || optionValue.default}
-          onChange={(e) => handleChange(propertyName, key, e)}
-        >
-          {optionValue.enum.map((item: string) => (
-            <option key={item} value={item}>
-              {item}
-            </option>
-          ))}
+    // Handle non-object values
+
+    if (typeof value === 'string' && /^#([0-9a-f]{3}){1,2}$/i.test(value)) {
+      return (
+        <><input
+          type="color"
+          id={id}
+          value={value}
+          onChange={(e) => console.log(e.target.value)} />{' '}<span>{value}</span></>
+      );
+    }
+
+    if (typeof value === 'string') {
+      return (
+        <textarea id={id} value={value} onChange={(e) => console.log(e.target.value)} />
+      );
+    }
+
+    if (typeof value === 'boolean') {
+      return (
+        <select id={id} value={String(value)} onChange={(e) => console.log(e.target.value)}>
+          <option value="true">true</option>
+          <option value="false">false</option>
         </select>
       );
     }
 
-    return (
-      <div key={key}>
-        <label>{key}</label> {inputElement}
-      </div>
-    );
+    // Add other types as needed (number, etc.)
+    return null;
   };
 
-  const toggleGroup = (propertyName: string) => {
-    setCollapsedGroups((prevGroups) => ({
-      ...prevGroups,
-      [propertyName]: !prevGroups[propertyName],
-    }));
-  };
-
-  const renderProperties = () => {
-    return Object.entries(config).map(([propertyName, propertyValue]) => {
-      const isCollapsed = collapsedGroups[propertyName];
-
-      return (
-        <div key={propertyName}>
-          <h2 onClick={() => toggleGroup(propertyName)} style={{ cursor: 'pointer' }}>
-            {propertyName} {isCollapsed ? '▾' : '▴'}{' '}
-            <button style={{ fontSize: '14px' }} onClick={() => exportConfig(propertyName)}>
-              Export
-            </button>
-          </h2>
-          {propertyValue.description && <p>{propertyValue.description}</p>}
-          {!isCollapsed && propertyValue && propertyValue.properties && (
-            <div>
-              {Object.entries(propertyValue.properties).map(([key, value]: [string, any]) => {
-                if (value.internal === true) return null;
-
-                return (
-                  <div key={key}>
-                    {renderConfigOption(propertyName, key, value)}
-                    {value.description && <p>{value.description}</p>}
-                  </div>
-                );
-              })}
-
-            </div>
-          )}
-        </div>
-      );
-    });
-  };
-
-  return <>{renderProperties()}</>;
+  return (
+    <div>
+      {modName !== null && <h2>{String(modName)} Configuration</h2>}
+      {renderInputs()}
+    </div>
+  );
 };
 
 export default Config;

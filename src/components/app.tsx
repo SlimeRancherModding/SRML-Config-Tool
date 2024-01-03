@@ -1,9 +1,10 @@
+// App.tsx
 import React, { useState } from 'react';
 import Config from './config';
-import { mods } from '../mods/mods';
+import { ModsDefaults } from '../mods/mods'; // Use constMods directly
 
-function App() {
-  const [selectedMod, setSelectedMod] = useState('');
+const App: React.FC = () => {
+  const [selectedMod, setSelectedMod] = useState<string | null>(null);
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedMod(e.target.value);
@@ -12,19 +13,19 @@ function App() {
   return (
     <React.StrictMode>
       <div style={{ padding: '20px' }}>
-      <h1>SRML Config Tool</h1>
-      <select onChange={handleSelectChange}>
-        {!selectedMod && <option value="null">Select a mod</option>}
-        {Object.keys(mods).map((modName) => ( 
-          <option key={modName} value={modName}>
-            {modName}
-          </option>
-        ))}
-      </select>
-      <Config modSelected={selectedMod}/>
+        <h1>SRML Config Tool</h1>
+        <select onChange={handleSelectChange}>
+          {!selectedMod && <option value={'None'}>Select a mod</option>}
+          {Object.keys(ModsDefaults).map((mod) => (
+            <option key={mod} value={mod}>
+              {mod}
+            </option>
+          ))}
+        </select>
+        <Config modName={selectedMod}/>
       </div>
     </React.StrictMode>
   );
-}
+};
 
 export default App;
